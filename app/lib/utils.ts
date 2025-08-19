@@ -1,5 +1,4 @@
 import type { CountryObj } from "../../types";
-import { data } from "react-router";
 
 let cachedData: CountryObj[] = [];
 
@@ -61,8 +60,8 @@ export async function getBorderCountries(
     cachedData = await loadData("", "");
   }
 
-  const match = cachedData.find((data: CountryObj) => {
-    return data.alpha3Code.startsWith(borderAlpha3Code);
+  const match = cachedData.find((tempData: CountryObj) => {
+    return tempData.alpha3Code.startsWith(borderAlpha3Code);
   });
 
   return match ? match.name : "";
