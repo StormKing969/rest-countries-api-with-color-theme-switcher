@@ -1,4 +1,7 @@
 import type { CountryObj } from "../../types";
+import { data } from "react-router";
+
+let cachedData: CountryObj[] = [];
 
 export async function loadData(
   name: string,
@@ -15,7 +18,7 @@ export async function loadData(
   const nameLower: string = name.toLowerCase();
   const regionLower: string = region.toLowerCase();
 
-  return response.filter((country: CountryObj) => {
+  const filteredData: CountryObj[] = response.filter((country: CountryObj) => {
     const matchesName: boolean = name
       ? country.name.toLowerCase().startsWith(nameLower)
       : true;
@@ -24,6 +27,9 @@ export async function loadData(
       : true;
     return matchesName && matchesRegion;
   });
+
+  cachedData = filteredData;
+  return filteredData;
 }
 
 export function debounce<T extends (...args: any[]) => void>(
@@ -46,4 +52,18 @@ export function debounce<T extends (...args: any[]) => void>(
 
 export function formatSize(population: number): string {
   return population.toLocaleString("en-US");
+}
+
+export async function getBorderCountries(
+  borderAlpha3Code: string,
+): Promise<string> {
+  if (cachedData.length === 0) {
+    cachedData = await loadData("", "");
+  }
+
+  const match = cachedData.find((data: CountryObj) => {
+    return data.alpha3Code.startsWith(borderAlpha3Code);
+  });
+
+  return match ? match.name : "";
 }

@@ -21,7 +21,7 @@ const FilterDropdown = ({
   return (
     <div
       className={
-        "bg-blue-900 rounded-[4px] px-3 flex flex-row items-center gap-2"
+        "bg-blue-900 rounded-[4px] px-3 flex flex-row items-center gap-2 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
       }
     >
       <ImCross

@@ -10,12 +10,16 @@ const Navbar = ({
   setToggleDarkMode: React.Dispatch<SetStateAction<boolean>>;
 }) => {
   return (
-    <section className={"flex flex-row items-center justify-between bg-blue-900 py-8 px-5"}>
+    <section
+      className={
+        "flex flex-row items-center justify-between bg-blue-900 py-8 px-5 cursor-default shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+      }
+    >
       <h1 className={"font-bold"}>Where in the world?</h1>
 
       {toggleDarkMode ? (
         <div
-          className={"flex flex-row gap-2 items-center"}
+          className={"flex flex-row gap-2 items-center cursor-pointer"}
           onClick={() => setToggleDarkMode(!toggleDarkMode)}
         >
           <FaMoon />
@@ -23,7 +27,7 @@ const Navbar = ({
         </div>
       ) : (
         <div
-          className={"flex flex-row gap-2 items-center"}
+          className={"flex flex-row gap-2 items-center cursor-pointer"}
           onClick={() => setToggleDarkMode(!toggleDarkMode)}
         >
           <FaSun />

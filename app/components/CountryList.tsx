@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "~/components/SearchBar";
 import type { CountryObj } from "../../types";
 import { loadData } from "~/lib/utils";
 import CountryCard from "~/components/CountryCard";
 import FilterDropdown from "~/components/FilterDropdown";
+import { Link } from "react-router";
 
-const CountryList = () => {
+const CountryList = ({ toggleDarkMode }: { toggleDarkMode: boolean }) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [countryList, setCountryList] = useState<CountryObj[]>([]);
   const [selectedRegions, setSelectedRegions] = useState<string>("");
@@ -32,12 +33,21 @@ const CountryList = () => {
         />
       </div>
 
-      <div className={"flex flex-col sm:flex-row flex-wrap gap-2 mt-2 items-center justify-between"}>
+      <div
+        className={
+          "flex flex-col sm:flex-row flex-wrap gap-2 mt-2 items-center justify-between"
+        }
+      >
         {countryList.length === 0 ? (
-          <h1>Can't find any matching countries...</h1>
+          <h1 className={"font-bold"}>Can't find any matching countries...</h1>
         ) : (
           countryList.map((country, index) => (
-            <CountryCard key={index} country={country} />
+            <Link
+              to={`/country/${country.name}`}
+              state={{ country, toggleDarkMode }}
+            >
+              <CountryCard key={index} country={country} />
+            </Link>
           ))
         )}
       </div>
