@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    "Nunito Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-blue-900: hsl(209, 23%, 22%); /* Dark Mode Elements */
+  --color-blue-950: hsl(207, 26%, 17%); /* Dark Mode Background */
+  --color-gray-950: hsl(200, 15%, 8%); /* Light Mode Text */
+  --color-gray-400: hsl(0, 0%, 50%); /* Light Mode Input */
+  --color-gray-50: hsl(0, 0%, 99%); /* Light Mode Background */
+}
+
+html,
+body {
+  @apply p-0 m-0 box-border min-h-screen h-full w-full;
+}
+
+.dark-mode {
+  @apply bg-blue-950 text-white;
+}
+
+.dark-mode-components {
+    @apply bg-blue-900;
+}
+
+.normal-mode {
+  @apply bg-gray-50 text-gray-950;
+}
+
+.normal-mode-components {
+    @apply bg-white;
+}
+
+.normal-mode-input {
+    @apply text-gray-400
+}
