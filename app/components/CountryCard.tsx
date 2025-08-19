@@ -10,14 +10,14 @@ const CountryCard = ({
     capital,
     flags: { svg },
   },
+  toggleDarkMode,
 }: {
   country: CountryObj;
+  toggleDarkMode: boolean;
 }) => {
   return (
     <div
-      className={
-        "max-w-[150px] h-48 flex flex-col justify-center rounded-[4px] bg-blue-900 my-4 cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
-      }
+      className={`max-w-[150px] h-48 flex flex-col justify-center rounded-[4px] ${toggleDarkMode ? "dark-mode" : "normal-mode"} my-4 cursor-pointer shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}
     >
       <img
         src={svg}
@@ -31,16 +31,27 @@ const CountryCard = ({
         <div className={"font-semibold text-[8px] mt-2"}>
           <p>
             Population:{" "}
-            <span className={"font-light text-gray-300"}>
+            <span
+              className={`font-light ${toggleDarkMode ? "text-gray-300" : "text-gray-500"}`}
+            >
               {formatSize(population)}
             </span>
           </p>
           <p>
-            Region: <span className={"font-light text-gray-300"}>{region}</span>
+            Region:{" "}
+            <span
+              className={`font-light ${toggleDarkMode ? "text-gray-300" : "text-gray-500"}`}
+            >
+              {region}
+            </span>
           </p>
           <p>
             Capital:{" "}
-            <span className={"font-light text-gray-300"}>{capital}</span>
+            <span
+              className={`font-light ${toggleDarkMode ? "text-gray-300" : "text-gray-500"}`}
+            >
+              {capital}
+            </span>
           </p>
         </div>
       </div>

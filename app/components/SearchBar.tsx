@@ -10,9 +10,11 @@ import { debounce } from "~/lib/utils";
 const SearchBar = ({
   setSearchTerm,
   searchTerm,
+  toggleDarkMode,
 }: {
   setSearchTerm: React.Dispatch<SetStateAction<string>>;
   searchTerm: string;
+  toggleDarkMode: boolean;
 }) => {
   const [inputValue, setInputValue] = useState(searchTerm);
 
@@ -34,9 +36,7 @@ const SearchBar = ({
 
   return (
     <div
-      className={
-        "flex flex-row gap-5 px-5 py-3 rounded-[4px] items-center bg-blue-900 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
-      }
+      className={`flex flex-row gap-5 px-5 py-3 rounded-[4px] items-center ${toggleDarkMode ? "dark-mode" : "normal-mode"} shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}
     >
       <FaSearch />
       <input

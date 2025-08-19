@@ -24,12 +24,17 @@ const CountryList = ({ toggleDarkMode }: { toggleDarkMode: boolean }) => {
           "flex flex-col sm:flex-row gap-5 items-start sm:items-center sm:justify-between"
         }
       >
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <SearchBar
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          toggleDarkMode={toggleDarkMode}
+        />
 
         <FilterDropdown
           selectedRegions={selectedRegions}
           setSelectedRegions={setSelectedRegions}
           countryList={countryList}
+          toggleDarkMode={toggleDarkMode}
         />
       </div>
 
@@ -46,7 +51,11 @@ const CountryList = ({ toggleDarkMode }: { toggleDarkMode: boolean }) => {
               to={`/country/${country.name}`}
               state={{ country, toggleDarkMode }}
             >
-              <CountryCard key={index} country={country} />
+              <CountryCard
+                key={index}
+                country={country}
+                toggleDarkMode={toggleDarkMode}
+              />
             </Link>
           ))
         )}

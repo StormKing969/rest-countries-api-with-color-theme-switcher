@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { getBorderCountries } from "~/lib/utils";
 
-const BorderCountry = ({ country, darkMode }: { country: string; darkMode:boolean }) => {
+const BorderCountry = ({
+  country,
+  darkMode,
+}: {
+  country: string;
+  darkMode: boolean;
+}) => {
   const [countryName, setCountryName] = useState<string>("");
 
   useEffect(() => {
@@ -10,7 +16,7 @@ const BorderCountry = ({ country, darkMode }: { country: string; darkMode:boolea
 
   return (
     <div
-      className={`rounded-[4px] ${darkMode ? "bg-blue-900" : "bg-gray-400"} w-fit text-gray-300 text-center`}
+      className={`rounded-[4px] ${darkMode ? "dark-mode text-gray-300" : "normal-mode normal-mode-input"} w-fit text-center shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}
     >
       <p className={"py-1 px-3"}>{countryName}</p>
     </div>

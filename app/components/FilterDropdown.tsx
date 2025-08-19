@@ -6,10 +6,12 @@ const FilterDropdown = ({
   selectedRegions,
   setSelectedRegions,
   countryList,
+  toggleDarkMode,
 }: {
   selectedRegions: string;
   setSelectedRegions: React.Dispatch<SetStateAction<string>>;
   countryList: CountryObj[];
+  toggleDarkMode: boolean;
 }) => {
   const uniqueRegions = [...new Set(countryList.map((ele) => ele.region))];
 
@@ -20,16 +22,14 @@ const FilterDropdown = ({
 
   return (
     <div
-      className={
-        "bg-blue-900 rounded-[4px] px-3 flex flex-row items-center gap-2 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
-      }
+      className={`${toggleDarkMode ? "dark-mode" : "normal-mode"} rounded-[4px] px-3 flex flex-row items-center gap-2 shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}
     >
       <ImCross
         className={`w-2 ${!selectedRegions ? "hidden" : ""} cursor-pointer`}
         onClick={() => setSelectedRegions("")}
       />
       <select
-        className="bg-blue-900 border-none py-4 text-center cursor-pointer text-[12px] disabled:opacity-50 disabled:cursor-not-allowed"
+        className={`${toggleDarkMode ? "dark-mode" : "normal-mode"} border-none py-4 text-center cursor-pointer text-[12px] disabled:opacity-50 disabled:cursor-not-allowed`}
         onChange={handleOnChange}
         value={selectedRegions}
         disabled={uniqueRegions.length === 0}
