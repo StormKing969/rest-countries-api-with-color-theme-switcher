@@ -1,9 +1,7 @@
 import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CountryList from "~/components/CountryList";
-import type { CountryObj } from "../../types";
-import { loadData } from "~/lib/utils";
 
 export function meta({}: Route.MetaArgs) {
   return [
