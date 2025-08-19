@@ -27,12 +27,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![desktop-01.png](public/desktop-01.png)
+![desktop-02.png](public/desktop-02.png)
+![mobile-01.png](public/mobile-01.png)
+![mobile-02.png](public/mobile-02.png)
 
 ### Links
 
 - Solution URL: [https://github.com/StormKing969/rest-countries-api-with-color-theme-switcher](https://github.com/StormKing969/rest-countries-api-with-color-theme-switcher)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://countries-api-with-bg-switcher.netlify.app/](https://countries-api-with-bg-switcher.netlify.app/)
 
 ## My process
 
@@ -41,15 +44,13 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
+- TailwindCss
 - [React](https://reactjs.org/) - JS library
 - [Vite](https://vite.dev/) - React framework
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Sajana Wijesinghe](https://sajana-wijesinghe-portfolio-v4.netlify.app/)
+- Frontend Mentor - [@StormKing969](https://www.frontendmentor.io/profile/StormKing969)
+- Twitter - [@SajanaW9](https://www.twitter.com/SajanaW9)

@@ -2,6 +2,7 @@ import type { Route } from "./+types/home";
 import Navbar from "~/components/Navbar";
 import { useState } from "react";
 import CountryList from "~/components/CountryList";
+import {useLocation} from "react-router";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -11,11 +12,13 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const [toggleDarkMode, setToggleDarkMode] = useState<boolean>(true);
+    const location = useLocation();
+    const bgState = location.state?.toggleDarkMode;
+  const [toggleDarkMode, setToggleDarkMode] = useState<boolean>(bgState);
 
   return (
     <main
-      className={`${toggleDarkMode ? "dark-mode" : "normal-mode"} max-w-[1440px] min-w-[340px] w-full`}
+      className={`${toggleDarkMode ? "dark-mode" : "normal-mode"} min-w-[340px] lg:my-auto w-full`}
     >
       <Navbar
         toggleDarkMode={toggleDarkMode}

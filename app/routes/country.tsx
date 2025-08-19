@@ -20,7 +20,7 @@ const Country = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const countryDetail = location.state?.country;
-  const darkModeState = location.state?.toggleDarkMode || true;
+  const darkModeState = location.state?.toggleDarkMode;
   const [darkMode, setDarkMode] = useState<boolean>(darkModeState);
 
   if (!countryDetail) {
@@ -39,11 +39,9 @@ const Country = () => {
     >
       <Navbar toggleDarkMode={darkMode} setToggleDarkMode={setDarkMode} />
 
-      <Link to={"/"}>
+      <Link to={"/"} state={{ darkModeState }}>
         <div
-          className={
-            `mt-8 mb-3 mx-5 px-5 py-1 ${darkMode ? "dark-mode" : "normal-mode"} w-fit rounded-[4px] flex flex-row gap-2 items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)]`
-          }
+          className={`mt-8 mb-3 mx-5 px-5 py-1 ${darkMode ? "dark-mode" : "normal-mode"} w-fit rounded-[4px] flex flex-row gap-2 items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.5)]`}
         >
           <IoArrowBackOutline />
           <p>Back</p>
