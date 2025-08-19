@@ -1,4 +1,3 @@
-import React from "react";
 import type { CountryObj } from "../../types";
 import { formatSize } from "~/lib/utils";
 
