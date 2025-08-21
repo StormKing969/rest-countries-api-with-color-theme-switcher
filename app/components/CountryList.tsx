@@ -12,9 +12,11 @@ const CountryList = ({ toggleDarkMode }: { toggleDarkMode: boolean }) => {
   const [selectedRegions, setSelectedRegions] = useState<string>("");
 
   useEffect(() => {
-    loadData(searchTerm, selectedRegions).then((data) => {
-      setCountryList(data);
-    });
+    async function fetchData() {
+      return await loadData(searchTerm, selectedRegions);
+    }
+
+    fetchData().then((r) => setCountryList(r));
   }, [searchTerm, selectedRegions]);
 
   return (

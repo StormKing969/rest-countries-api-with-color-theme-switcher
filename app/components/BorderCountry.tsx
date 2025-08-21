@@ -11,7 +11,11 @@ const BorderCountry = ({
   const [countryName, setCountryName] = useState<string>("");
 
   useEffect(() => {
-    getBorderCountries(country).then((r) => setCountryName(r));
+    async function fetchBorders() {
+      return await getBorderCountries(country);
+    }
+
+    fetchBorders().then((r) => setCountryName(r));
   }, []);
 
   return (
