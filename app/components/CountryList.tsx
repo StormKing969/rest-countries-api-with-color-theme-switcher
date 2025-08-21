@@ -42,7 +42,7 @@ const CountryList = ({ toggleDarkMode }: { toggleDarkMode: boolean }) => {
 
       <div
         className={
-          "flex flex-col sm:flex-row flex-wrap gap-2 mt-2 items-center justify-start"
+          "flex flex-col sm:flex-row flex-wrap gap-2 mt-2 items-center justify-center"
         }
       >
         {countryList.length === 0 ? (
