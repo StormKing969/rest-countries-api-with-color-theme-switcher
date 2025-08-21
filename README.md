@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/StormKing969/rest-countries-api-with-color-theme-switcher](https://github.com/StormKing969/rest-countries-api-with-color-theme-switcher)
-- Live Site URL: [https://countries-api-with-bg-switcher.netlify.app/](https://countries-api-with-bg-switcher.netlify.app/)
+- Live Site URL: [https://countries-api-with-bgcolor-switcher.netlify.app/](https://countries-api-with-bgcolor-switcher.netlify.app/)
 
 ## My process
 
